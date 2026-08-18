@@ -13,7 +13,7 @@ export default function OrderScreen({ character, onRestart }: OrderScreenProps) 
 
   return (
     <motion.div
-      className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-8"
+      className="relative z-10 min-h-screen flex flex-col items-center justify-start px-4 py-12"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
