@@ -247,7 +247,7 @@ export default function MagicBackground({ activePhase }: { activePhase: 'start' 
   return (
     <>
       {/* Gradient background */}
-      <div className="fixed inset-0 z-0" style={{
+      <div className="fixed inset-0 -z-10 pointer-events-none" style={{
         background: 'linear-gradient(180deg, #0a0015 0%, #1a0030 25%, #0f0025 50%, #150020 75%, #0a0015 100%)',
       }} />
       
