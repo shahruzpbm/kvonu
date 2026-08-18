@@ -41,7 +41,6 @@ export default function PhotoCardScreen({ character, onContinue }: PhotoCardScre
         scale: 3,
         backgroundColor: '#0a0015',
         useCORS: true,
-        allowTaint: true,
         logging: false,
       });
 
