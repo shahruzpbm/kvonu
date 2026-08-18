@@ -15,7 +15,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       transition={{ duration: 0.8 }}
     >
       {/* Animated rings */}
-      <div className="relative mb-8">
+      <div className="relative mb-8 flex items-center justify-center">
         <motion.div
           className="absolute -inset-8 rounded-full border border-purple-500/20"
           animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
@@ -32,16 +32,19 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
         />
 
-        <motion.div
-          className="relative w-24 h-24 rounded-full flex items-center justify-center"
-          style={{
-            background: 'conic-gradient(from 0deg, #ec4899, #a855f7, #22d3ee, #fbbf24, #ec4899)',
-            padding: '3px',
-          }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-        >
-          <div className="w-full h-full rounded-full bg-[#0a0015] flex items-center justify-center">
+        {/* Rotating gradient border container */}
+        <div className="relative w-24 h-24 rounded-full p-[3px] flex items-center justify-center overflow-hidden">
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            style={{
+              background: 'conic-gradient(from 0deg, #ec4899, #a855f7, #22d3ee, #fbbf24, #ec4899)',
+            }}
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+          />
+
+          {/* Inner static badge with pulsing cake */}
+          <div className="relative z-10 w-full h-full rounded-full bg-[#0a0015] flex items-center justify-center">
             <motion.span
               className="text-4xl"
               animate={{ scale: [1, 1.2, 1] }}
@@ -50,7 +53,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               🎂
             </motion.span>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Brand */}
